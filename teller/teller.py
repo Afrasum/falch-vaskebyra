@@ -71,6 +71,28 @@ def salt():
 SALT = None  # settes i main()
 
 
+def klient_ip(headere, peer):
+    """Finn den ekte besøkendes IP bak Cloudflare-tunnel og Caddy.
+
+    Bak cloudflared + Caddy blir X-Forwarded-For satt til ::1 — Caddy ser bare
+    tunnelen på loopback, ikke den som faktisk surfer. Cloudflare sender den
+    ekte adressen i CF-Connecting-IP, så den har forrang. Uten den ville alle
+    eksterne besøkende med samme user-agent hashet til samme nøkkel og telt
+    som én person.
+
+    Verdien brukes kun som hash-input, aldri lagret eller logget. Headeren er
+    i prinsippet forfalskbar, men origin er bare tilgjengelig via loopback og
+    tunnelen, så det krever allerede tilgang til maskinen.
+    """
+    cf = (headere.get("CF-Connecting-IP") or "").strip()
+    if cf:
+        return cf
+    xff = (headere.get("X-Forwarded-For") or "").split(",")[0].strip()
+    if xff and xff not in ("::1", "127.0.0.1"):
+        return xff
+    return peer
+
+
 def nokkel(ip, ua, dag):
     raw = f"{SALT}|{ip}|{ua}|{dag}".encode("utf-8")
     return hashlib.sha256(raw).hexdigest()[:32]
@@ -126,9 +148,7 @@ class Handler(BaseHTTPRequestHandler):
             self._svar(404, {"feil": "ukjent endepunkt"})
             return
 
-        # Caddy setter X-Forwarded-For. Vi bruker den bare til hashing.
-        xff = self.headers.get("X-Forwarded-For", "")
-        ip = xff.split(",")[0].strip() or self.client_address[0]
+        ip = klient_ip(self.headers, self.client_address[0])
         ua = self.headers.get("User-Agent", "")
 
         try:

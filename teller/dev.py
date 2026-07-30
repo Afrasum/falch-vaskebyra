@@ -37,9 +37,9 @@ class Dev(SimpleHTTPRequestHandler):
             return super().do_GET()
 
         ua = self.headers.get("User-Agent", "")
+        ip = teller.klient_ip(self.headers, self.client_address[0])
         try:
-            n, ny = teller.registrer(self.client_address[0], ua,
-                                     tell=not teller.BOT.search(ua))
+            n, ny = teller.registrer(ip, ua, tell=not teller.BOT.search(ua))
             kode, kropp = 200, {"n": n, "ny": ny}
         except sqlite3.Error as e:
             kode, kropp = 503, {"feil": str(e)}
