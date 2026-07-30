@@ -1,0 +1,10 @@
+.DS_Store
+*.log
+
+# Tellerdatabaser — genereres ved kjøring
+teller/*.db
+teller/*.db-wal
+teller/*.db-shm
+
+__pycache__/
+*.pyc
