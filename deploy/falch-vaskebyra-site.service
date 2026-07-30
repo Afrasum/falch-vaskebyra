@@ -1,0 +1,17 @@
+# /etc/systemd/system/falch-vaskebyra-site.service
+# Speiler landslagsdrakt-site.service og neurochip-site.service.
+[Unit]
+Description=Caddy serving falch-vaskebyra.afrasum.dev
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=afras
+Group=afras
+ExecStart=/usr/bin/caddy run --config /etc/caddy/falch-vaskebyra.Caddyfile --adapter caddyfile
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

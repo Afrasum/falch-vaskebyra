@@ -1,0 +1,15 @@
+[Unit]
+Description=Falch Vaskebyrå – besøksteller
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/projects/falch-vaskebyra
+Environment=FALCH_DB=%h/projects/falch-vaskebyra/teller/teller.db
+Environment=FALCH_PORT=8007
+ExecStart=/usr/bin/python3 %h/projects/falch-vaskebyra/teller/teller.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

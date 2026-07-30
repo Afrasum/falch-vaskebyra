@@ -1,0 +1,21 @@
+# /etc/caddy/falch-vaskebyra.Caddyfile
+# Samme mønster som landslagsdrakt.Caddyfile og neurochip.Caddyfile.
+# Cloudflared-tunnelen «rpi» sender falch-vaskebyra.afrasum.dev hit.
+#
+# Merk: root må stå på sitenivå, ikke inne i handle-blokken, ellers finner
+# file_server ingen rot og serverer fra Caddys arbeidskatalog.
+
+{
+	auto_https off
+	admin off
+}
+
+:8008 {
+	handle /api/teller {
+		reverse_proxy 127.0.0.1:8007
+	}
+
+	root * /home/afras/projects/falch-vaskebyra
+	file_server
+	encode gzip zstd
+}
