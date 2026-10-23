@@ -12,17 +12,18 @@
 
 ## Hva er dette?
 
-Falch Vaskebyrå er et enkeltpersonforetak i Trondheim som tar flyttevask,
-nedvask, vindusvask, trappevask og fast renhold, alt i gangavstand fra
-Møllenberg. Dette er nettsiden til foretaket.
+Falch Vaskebyrå er vaskegrenen til et enkeltpersonforetak i Trondheim som
+gjør mer enn bare vask. Vaskebyrået tar flyttevask, nedvask, vindusvask,
+trappevask og fast renhold, alt i gangavstand fra Møllenberg. Dette er
+nettsiden til vaskebyrået.
 
 ## Bakgrunnen
 
 Utleiere liker å skrive at de «på det sterkeste anbefaler et profesjonelt
 vaskebyrå med fornøydhetsgaranti» når du flytter ut. Så vi startet et. Foretaket
-er registrert i Brønnøysund og står med status *Lovlig* i Arbeidstilsynets
-renholdsregister. Et ekte vaskebyrå trenger en ekte nettside, og da ble det
-denne.
+er registrert i Brønnøysund, har HMS-kort og står som *Godkjent uten ansatte*
+i Arbeidstilsynets renholdsregister. Et ekte vaskebyrå trenger en ekte
+nettside, og da ble det denne.
 
 ## Stilen
 
@@ -35,6 +36,11 @@ Siden er en kjærlighetserklæring til 90-tallets hjemmesider:
 
 Den er best vist i Netscape Navigator 4.0 ved 800×600, men funker fint på
 mobil også.
+
+## Takk
+
+En stor takk til **Anna Rørnes** for hjelp med designet av nettsiden og for å
+ha skaffet oss kundeomtaler. 💐
 
 ---
 

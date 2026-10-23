@@ -1,7 +1,8 @@
 # Falch Vaskebyrå — utviklernotater
 
-Nettsiden til Falch Vaskebyrå — et enkeltpersonforetak i Trondheim som gjør
-flyttevask, nedvask, vindusvask, trappevask og fast renhold.
+Nettsiden til Falch Vaskebyrå — vaskegrenen til et enkeltpersonforetak i
+Trondheim som gjør mer enn bare vask. Vaskebyrået tar flyttevask, nedvask,
+vindusvask, trappevask og fast renhold.
 
 Siden er en bevisst 90-talls-pastisj: rullende marquee, Comic Sans, ridge-borders,
 besøksteller og en gjørmeflekk som blir vasket bort når du scroller til bunnen.
@@ -155,11 +156,11 @@ ssh rpi5 'cloudflared tunnel route dns rpi falch-vaskebyra.afrasum.dev'
   (IntersectionObserver, med scroll-fallback), og manuelt via 🪣-lenken i footeren.
   Den hopper helt over ved `prefers-reduced-motion`. `window.falchVask()` kjører
   den fra konsollet.
-- **«Lovlig», ikke «Godkjent».** Arbeidstilsynets renholdsregister oppgir status
-  *Lovlig* for org.nr 930 912 727: foretaket kan lovlig tilby renholdstjenester
-  mens HMS-kortene er under bestilling. Endelig godkjenning kommer først når
-  kortene er på plass. Ikke skriv «godkjent renholdsvirksomhet» på siden før
-  registeret faktisk sier det — sjekk
+- **«Godkjent uten ansatte».** Arbeidstilsynets renholdsregister oppgir status
+  *Lovlig* og *Godkjent uten ansatte* for org.nr 930 912 727 (sjekket
+  2026-10-23, etter at HMS-kortet kom). Det betyr at bare eieren kan gjøre
+  arbeidet, med synlig HMS-kort. Får foretaket ansatte, gjelder flere krav —
+  ikke skriv noe annet på siden før registeret sier det. Sjekk
   <https://www.arbeidstilsynet.no/renholdsvirksomhet/930912727>.
 - **Registrert adresse er en annen enn driftsstedet.** Brreg har
   Ytrebygdsvegen 66A, 5252 Søreidgrend (Bergen) som forretningsadresse, mens
