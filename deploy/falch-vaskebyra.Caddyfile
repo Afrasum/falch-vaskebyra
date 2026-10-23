@@ -16,6 +16,16 @@
 	}
 
 	root * /home/afras/projects/falch-vaskebyra
-	file_server
+
+	# Roten er hele git-repoet, så bare selve nettsiden slippes ut.
+	# .git/, deploy/, teller/, docs/ og README gir 404.
+	@offentlig path / /index.html /css/* /js/* /assets/*
+	handle @offentlig {
+		file_server
+	}
+	handle {
+		error 404
+	}
+
 	encode gzip zstd
 }
