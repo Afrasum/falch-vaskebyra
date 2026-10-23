@@ -48,6 +48,4 @@ ha skaffet oss kundeomtaler. 💐
 
 📞 401 66 715 · ✉️ afras@hotmail.no · Org.nr 930 912 727
 
-<sub>Tekniske detaljer om oppsett og drift ligger i <a href="docs/UTVIKLING.md">docs/UTVIKLING.md</a>.</sub>
-
 </div>
